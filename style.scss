@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    text-align: center;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'DM Serif Display', serif;
+    line-height: 1.1;
+    letter-spacing: 1px;
+}
+
+/* Container */
+
+.container {
+    width: 86vw;
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+/* Button Styles */
+
+.button {
+    text-transform: uppercase;
+    padding: 5px 20px;
+    letter-spacing: 1px;
+    outline: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.button--outline-white {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+
+    &:hover {
+        cursor: pointer;
+        border: 2px solid hsl(256, 26%, 20%);
+        background-color: white;
+        color: hsl(256, 26%, 20%);
+    }
+}
+
+.button--cta {
+    border: 2px solid hsl(256, 26%, 20%);
+    background-color: transparent;
+    color: hsl(256, 26%, 20%);
+    border: 2px solid white;
+}
+
+/* Navbar Styles */
+.navbar {
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-menu {
+        display: none;
+
+        li {
+            padding-top: 55px;
+            text-transform: uppercase;
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+
+    .nav-menu.show {
+        background-color: hsl(256, 26%, 20%);
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: calc(100vh - 82px);
+        width: 100vw;
+        top: 82px;
+        left: 0;
+        z-index: 1;
+        background-image: url('./images/bg-pattern-mobile-nav.svg');
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+
+    .close {
+        display: none;
+    }
+}
+
+/* Header Styles */
+
+.header {
+    background-color: hsl(256, 26%, 20%);
+    color: white;
+    margin-bottom: 140px;
+    position: relative;
+
+    .container {
+        width: 100vw;
+    }
+
+    #waveLeftMobile {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    #waveRightMobile {
+        position: absolute;
+        top: 410px;
+        right: 0px;
+    }
+
+    #waveLeftDesk {
+        display: none;
+    }
+
+    #waveRightDesk {
+        display: none;
+    }
+
+    .header__contentText {
+        width: 86vw;
+        margin: 0 auto;
+        padding: 90px 0;
+        position: relative;
+
+        h1 {
+            font-size: 41px;
+        }
+
+        img {
+            position: absolute;
+        }
+
+        p {
+            padding: 20px 0 35px 0;
+        }
+    }
+
+    .header__content {
+        position: relative;
+        ;
+    }
+}
+
+/* Section Styles */
+
+section {
+    margin-bottom: 140px;
+}
+
+/* Feature Section Styles */
+
+.features {
+    position: relative;
+
+    &::before {
+        padding: 0;
+        margin: auto;
+        content: "";
+        width: 160px;
+        height: 1px;
+        background-color: hsl(256, 26%, 20%);
+        ;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    h2 {
+        font-size: 35px;
+        font-weight: 400;
+        padding-bottom: 80px;
+        padding-top: 40px;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        padding-bottom: 25px;
+    }
+
+    p {
+        opacity: 0.5;
+    }
+
+    img {
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+
+    .feature__item+.feature__item {
+        padding-top: 60px;
+    }
+}
+
+/* CTA section Styles */
+
+.cta {
+    background-color: hsl(256, 26%, 20%);
+    background-image: url('./images/bg-pattern-how-we-work-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    color: white;
+    position: relative;
+
+    img {
+        position: absolute;
+        right: 0;
+        height: 90%;
+    }
+
+    .cta__content {
+        padding: 75px;
+
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        padding-bottom: 45px;
+    }
+}
+
+/* Footer Styles */
+
+footer {
+    background-image: url('./images/bg-pattern-footer-mobile.svg');
+    background-repeat: no-repeat;
+    padding: 90px 0;
+    background-color: hsl(0, 0%, 98%);
+
+    img {
+        margin: 0 auto;
+    }
+
+    .footer__socialLinks {
+        img {
+            display: inline-block;
+            padding: 40px 5px;
+            background-blend-mode: multiply;
+
+            &:hover {
+                cursor: pointer;
+                filter: brightness(50%);
+            }
+        }
+    }
+
+    .footer__nav {
+        text-transform: uppercase;
+        font-weight: 700;
+
+        p {
+            opacity: 0.6;
+            padding: 45px 0;
+            font: 14px;
+            font-family: 'Karla', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        li+li {
+            padding-top: 16px;
+        }
+    }
+}
+
+/* Media Queries for devices larger than 768px(Desktop styles) */
+@media (min-width: 768px) {
+    body {
+        text-align: left;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .navbar {
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .button--cta {
+                border: 2px solid hsl(256, 26%, 20%);
+                background-color: transparent;
+                color: hsl(256, 26%, 20%);
+
+                &:hover {
+                    cursor: pointer;
+                    border: 2px solid white;
+                    background-color: hsl(256, 26%, 20%);
+                    color: white;
+                }
+            }
+
+            li {
+                padding-top: 0;
+
+                a {
+                    color: hsl(273, 4%, 51%);
+
+                    &:hover {
+                        color: hsl(270, 9%, 17%);
+                    }
+                }
+            }
+        }
+
+        .nav-item+.nav-item {
+            margin-left: 25px;
+        }
+    }
+
+    .header {
+        margin-bottom: 300px;
+        padding-top: 100px;
+
+        #waveLeftMobile {
+            display: none;
+        }
+
+        #waveRightMobile {
+            display: none;
+        }
+
+        #waveLeftDesk,
+        #waveRightDesk {
+            display: block;
+            position: absolute;
+        }
+
+        #waveRightDesk {
+            right: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+        #waveLeftDesk {
+            left: 0px;
+            top: 400px;
+        }
+
+        .header__contentText {
+            width: 43vw;
+
+            &::before {
+                padding: 0;
+                margin: 0;
+                content: "";
+                width: 160px;
+                height: 1px;
+                background-color: white;
+                position: absolute;
+                top: 0
+            }
+
+            h1 {
+                font-size: 55px;
+            }
+        }
+
+        .header__image {
+            margin-bottom: -120px;
+        }
+
+        .container {
+            flex-direction: row-reverse;
+            display: flex;
+            justify-content: space-between;
+            width: 86vw;
+        }
+
+    }
+
+
+    .features {
+        position: relative;
+
+        &::before {
+            margin: 0;
+        }
+
+        .feature__items {
+            display: flex;
+
+            .feature__item+.feature__item {
+                padding-top: 0;
+                padding-left: 50px;
+            }
+        }
+
+        img {
+            margin: 0;
+        }
+    }
+
+    .cta {
+        background-image: url('./images/bg-pattern-how-we-work-desktop.svg');
+
+        .cta__content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+                font-size: 3rem;
+                padding: 0;
+                width: 50%;
+            }
+        }
+    }
+
+    footer {
+        background-image: url('./images/bg-pattern-footer-desktop.svg');
+
+        .footer__intro {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                margin: 0;
+            }
+        }
+
+        .footer__navs {
+            padding-right: 200px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+}
